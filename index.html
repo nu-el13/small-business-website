@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
         /* Navigation */
         nav {
             background-color: #111;
-            padding: 20px;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,15 +44,14 @@
             color: #ff9800;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            min-height: 500px;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
-            ),
-            url("https://images.unsplash.com/photo-1441986300917-64674bd600d8")
-            center/cover;
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)),
+                url("https://images.unsplash.com/photo-1441986300917-64674bd600d8")
+                center/cover;
 
             display: flex;
             justify-content: center;
@@ -62,7 +62,7 @@
         }
 
         .hero h1 {
-            font-size: 50px;
+            font-size: 52px;
             margin-bottom: 15px;
         }
 
@@ -78,65 +78,93 @@
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
+            margin: 5px;
         }
 
         .button:hover {
             background-color: #e68900;
         }
 
-        /* General Sections */
+        /* Sections */
         section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
+            padding: 70px 8%;
         }
 
         section h2 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-size: 32px;
         }
 
         /* About */
         .about {
+            max-width: 750px;
+            margin: auto;
             text-align: center;
         }
 
         .about p {
-            max-width: 700px;
-            margin: auto;
+            font-size: 18px;
         }
 
-        /* Services */
+        /* Products */
         .services {
             display: flex;
-            gap: 20px;
             justify-content: center;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .card {
             background-color: white;
-            padding: 30px;
             width: 300px;
+            padding-bottom: 25px;
             text-align: center;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
         }
 
         .card h3 {
+            font-size: 23px;
+            margin: 20px 10px 10px;
+        }
+
+        .card p {
+            padding: 0 20px;
             margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
         }
 
         /* Contact */
         .contact {
+            max-width: 700px;
+            margin: auto;
             text-align: center;
             background-color: white;
+            padding: 35px;
             border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         }
 
         .contact p {
             margin: 10px;
+            font-size: 17px;
         }
 
         /* Footer */
@@ -144,7 +172,7 @@
             background-color: #111;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
         }
 
         /* Mobile */
@@ -153,18 +181,28 @@
             nav {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
             }
 
             nav a {
                 margin: 5px;
+                display: inline-block;
+            }
+
+            .hero {
+                min-height: 450px;
             }
 
             .hero h1 {
-                font-size: 35px;
+                font-size: 36px;
             }
 
             .hero p {
                 font-size: 17px;
+            }
+
+            section {
+                padding: 50px 20px;
             }
         }
     </style>
@@ -174,36 +212,44 @@
 
     <!-- Navigation -->
     <nav>
+
         <h2>Nuel Fashion</h2>
 
         <div>
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#products">Products</a>
             <a href="#contact">Contact</a>
         </div>
+
     </nav>
 
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
 
         <div>
+
             <h1>Nuel Fashion Store</h1>
 
             <p>
                 Quality fashion and accessories at affordable prices.
             </p>
 
+            <a href="#products" class="button">
+                View Products
+            </a>
+
             <a href="#contact" class="button">
                 Contact Us
             </a>
+
         </div>
 
     </section>
 
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about">
 
         <h2>About Us</h2>
@@ -215,7 +261,8 @@
                 We provide quality clothing, shoes and
                 accessories for students and young adults.
                 Our goal is to provide stylish products
-                at affordable prices.
+                at affordable prices while giving our
+                customers a great shopping experience.
             </p>
 
         </div>
@@ -223,66 +270,74 @@
     </section>
 
 
-    <!-- Services -->
-    <section id="services">
+    <!-- Products Section -->
+    <section id="products">
 
-    <h2>Our Products</h2>
+        <h2>Our Products</h2>
 
-    <div class="services">
-
-       <div class="card">
-    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b"
-         alt="Clothing"
-         style="width:100%; border-radius:10px;">
-
-    <h3>Clothing</h3>
-            <p>
-                Stylish and comfortable clothing
-                for everyday use.
-            </p>
-            <p><strong>From ₦10,000</strong></p>
-        </div>
-
-        <div class="card">
-            <h3>Shoes</h3>
-            <p>
-                Quality footwear for casual
-                and special occasions.
-            </p>
-            <p><strong>From ₦15,000</strong></p>
-        </div>
-
-        <div class="card">
-            <h3>Accessories</h3>
-            <p>
-                Complete your outfit with
-                our collection of accessories.
-            </p>
-            <p><strong>From ₦5,000</strong></p>
-        </div>
-
-    </div>
-
-</section>
+        <div class="services">
 
 
+            <!-- Clothing -->
             <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b"
+                    alt="Clothing">
+
+                <h3>Clothing</h3>
+
+                <p>
+                    Stylish and comfortable clothing
+                    for everyday use.
+                </p>
+
+                <p class="price">
+                    From ₦10,000
+                </p>
+
+            </div>
+
+
+            <!-- Shoes -->
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+                    alt="Shoes">
+
                 <h3>Shoes</h3>
 
                 <p>
-                    Quality footwear suitable for
-                    everyday use and special occasions.
+                    Quality footwear for casual
+                    and special occasions.
                 </p>
+
+                <p class="price">
+                    From ₦15,000
+                </p>
+
             </div>
 
 
+            <!-- Accessories -->
             <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49"
+                    alt="Accessories">
+
                 <h3>Accessories</h3>
 
                 <p>
-                    Find accessories that complete
-                    your style.
+                    Complete your outfit with
+                    our collection of accessories.
                 </p>
+
+                <p class="price">
+                    From ₦5,000
+                </p>
+
             </div>
 
         </div>
@@ -290,27 +345,43 @@
     </section>
 
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
 
         <h2>Contact Us</h2>
 
         <div class="contact">
 
-            <p>📞 Phone: 07034191437 </p>
+            <p>
+                📞 Phone: 07034191437
+            </p>
 
-            <p>📧 Email: ndaganaemma1@gmail.com </p>
+            <p>
+                📧 Email: ndaganaemma1@gmail.com
+            </p>
 
-            <p>📍 Location: Abuja, Nigeria</p>
+            <p>
+                📍 Location: Kano, Nigeria
+            </p>
 
             <br>
 
-            <a href="mailto:example@email.com" class="button">
-                Send Us an Email
+            <a
+                href="https://wa.me/2347034191437"
+                class="button"
+                target="_blank">
+
+                Chat on WhatsApp
+
             </a>
-            <a href="https://wa.me/2347034191437" class="button">
-    Chat on WhatsApp
-</a>
+
+            <a
+                href="mailto:ndaganaemma1@gmail.com"
+                class="button">
+
+                Send Us an Email
+
+            </a>
 
         </div>
 
@@ -321,10 +392,12 @@
     <footer>
 
         <p>
-            © 2026 Emmanuel Fashion Store. All Rights Reserved.
+            © 2026 Nuel Fashion Store.
+            All Rights Reserved.
         </p>
 
     </footer>
 
 </body>
+
 </html>
